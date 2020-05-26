@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  caddy:
+    image: caddy
+    ports:
+      - 80:80
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./data/caddy_data:/data
+    restart: unless-stopped
+  # ubuntu:
+  #   image: ubuntu
+  #   command: curl caddy
